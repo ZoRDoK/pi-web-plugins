@@ -1,0 +1,61 @@
+{
+  "name": "@zordok/pi-web-plugins",
+  "version": "0.1.0",
+  "description": "Pi Web plugin packages.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "plugins/*"
+  ],
+  "files": [
+    "plugins"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"plugins/**/*.ts\" eslint.config.js vite.config.ts vitest.config.ts",
+    "knip": "knip",
+    "test": "vitest run --config vitest.config.ts",
+    "gitleaks": "gitleaks detect --no-git --source . --redact --no-banner",
+    "verify": "npm run typecheck && npm run lint && npm run knip && npm run gitleaks && npm test && npm run build"
+  },
+  "piWeb": {
+    "plugins": [
+      {
+        "id": "workspace-ideas",
+        "module": "plugins/pi-ideas/dist/pi-web-plugin.js"
+      }
+    ]
+  },
+  "keywords": [
+    "pi-package",
+    "pi-web",
+    "pi-web-plugin",
+    "workspace-ideas"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZoRDoK/pi-web-plugins.git"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@jmfederico/pi-web": "^1.202606.4",
+    "@nogoo9/gitleaks": "^8.30.1-post.2",
+    "@types/node": "^24.10.1",
+    "eslint": "^10.3.0",
+    "globals": "^17.6.0",
+    "knip": "^6.16.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.59.2",
+    "vite": "^7.2.4",
+    "vitest": "^4.1.5"
+  },
+  "peerDependencies": {
+    "@jmfederico/pi-web": ">=1.202606.4"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "npm@11.11.0"
+}

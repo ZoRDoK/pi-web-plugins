@@ -1,0 +1,30 @@
+{
+  "name": "@zordok/pi-web-plugin-ideas",
+  "version": "0.1.0",
+  "description": "Workspace Ideas plugin for Pi Web.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "piWeb": {
+    "plugins": [
+      {
+        "id": "workspace-ideas",
+        "module": "dist/pi-web-plugin.js"
+      }
+    ]
+  },
+  "keywords": [
+    "pi-package",
+    "pi-web",
+    "pi-web-plugin",
+    "ideas"
+  ]
+}

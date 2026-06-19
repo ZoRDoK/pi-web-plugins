@@ -1,0 +1,12 @@
+{
+  "workspaces": {
+    ".": {
+      "entry": [],
+      "project": ["*.ts", "*.js"]
+    },
+    "plugins/pi-ideas": {
+      "entry": ["src/pi-web-plugin.ts", "src/**/*.test.ts"],
+      "project": ["src/**/*.ts"]
+    }
+  }
+}

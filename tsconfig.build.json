@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "references": [
+    { "path": "./plugins/pi-ideas/tsconfig.build.json" }
+  ],
+  "files": []
+}
