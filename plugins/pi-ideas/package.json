@@ -4,12 +4,16 @@
   "description": "Workspace Ideas plugin for Pi Web.",
   "license": "MIT",
   "type": "module",
-  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json"
   },
   "files": [
-    "dist",
+    "dist/*.js",
+    "dist/*.js.map",
+    "dist/*.d.ts",
     "package.json",
     "README.md"
   ],

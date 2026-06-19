@@ -1,21 +1,12 @@
 {
   "name": "@zordok/pi-web-plugins",
   "version": "0.1.0",
-  "description": "Pi Web plugin packages.",
+  "description": "Monorepo for Pi Web plugin packages.",
   "license": "MIT",
   "type": "module",
-  "publishConfig": {
-    "access": "public"
-  },
+  "private": true,
   "workspaces": [
     "plugins/*"
-  ],
-  "files": [
-    "plugins/pi-ideas/dist/*.js",
-    "plugins/pi-ideas/dist/*.js.map",
-    "plugins/pi-ideas/dist/*.d.ts",
-    "plugins/pi-ideas/package.json",
-    "plugins/pi-ideas/README.md"
   ],
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
@@ -25,21 +16,12 @@
     "test": "vitest run --config vitest.config.ts",
     "gitleaks": "gitleaks detect --no-git --source . --redact --no-banner",
     "verify": "npm run typecheck && npm run lint && npm run knip && npm run gitleaks && npm test && npm run build",
-    "pack:dry": "npm pack --dry-run"
-  },
-  "piWeb": {
-    "plugins": [
-      {
-        "id": "workspace-ideas",
-        "module": "plugins/pi-ideas/dist/pi-web-plugin.js"
-      }
-    ]
+    "pack:dry": "npm pack --workspace @zordok/pi-web-plugin-ideas --dry-run"
   },
   "keywords": [
-    "pi-package",
     "pi-web",
     "pi-web-plugin",
-    "workspace-ideas"
+    "monorepo"
   ],
   "repository": {
     "type": "git",
@@ -57,9 +39,6 @@
     "typescript-eslint": "^8.59.2",
     "vite": "^7.2.4",
     "vitest": "^4.1.5"
-  },
-  "peerDependencies": {
-    "@jmfederico/pi-web": ">=1.202606.4"
   },
   "engines": {
     "node": ">=22"

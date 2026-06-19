@@ -1,12 +1,20 @@
 # pi-web-plugins
 
-Standalone Pi Web plugins installable as Pi packages.
+Monorepo for standalone Pi Web plugin packages.
 
 ## Plugins
 
-- [`plugins/pi-ideas`](plugins/pi-ideas) — Workspace Ideas panel for Pi Web.
+- [`@zordok/pi-web-plugin-ideas`](plugins/pi-ideas) — Workspace Ideas panel for Pi Web.
 
-## Install from GitHub
+## Install
+
+After the package is published:
+
+```bash
+pi install npm:@zordok/pi-web-plugin-ideas
+```
+
+For development or pre-release testing from GitHub:
 
 ```bash
 pi install git:github.com/ZoRDoK/pi-web-plugins
@@ -19,6 +27,7 @@ Restart/reload Pi Web after installation. Pi Web discovers `piWeb.plugins` from 
 ```bash
 npm install
 npm run verify
+npm run pack:dry
 ```
 
 Quality gates:
