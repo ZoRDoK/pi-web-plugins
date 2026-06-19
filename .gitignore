@@ -35,7 +35,7 @@ coverage/
 .stylelintcache
 
 # Build output: keep plugin dist because Pi package installs from git do not run build.
-dist/
+/dist/
 plugins/*/dist/.tsbuildinfo
 
 # npm pack
